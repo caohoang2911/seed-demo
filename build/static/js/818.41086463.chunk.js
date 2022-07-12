@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_redux=self.webpackChunkreact_redux||[]).push([[818],{818:function(e,r,u){u.r(r),u.d(r,{default:function(){return t}});u(2791);var n=u(184);function t(){return(0,n.jsx)("div",{children:"OrderByPatch"})}}}]);
+//# sourceMappingURL=818.41086463.chunk.js.map

@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/764.72cbb66c.chunk.js","mappings":"iLAEe,SAASA,IACtB,OAAO","sources":["modules/monitor-order/pages/customization-view/CustomizationView.tsx"],"sourcesContent":["import React from 'react';\n\nexport default function CustomizationView() {\n  return <div>CustomizationView</div>;\n}\n"],"names":["CustomizationView"],"sourceRoot":""}

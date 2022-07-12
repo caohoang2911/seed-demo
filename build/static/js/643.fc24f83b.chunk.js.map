@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/643.fc24f83b.chunk.js","mappings":"gLAMA,EAJ+B,WAC7B,OAAO","sources":["modules/monitor-order/pages/order-pending/OrderPending.tsx"],"sourcesContent":["import React from 'react';\n\nconst OrderPending: React.FC = (): React.ReactElement => {\n  return <div>OrderPending</div>;\n};\n\nexport default OrderPending;\n"],"names":[],"sourceRoot":""}

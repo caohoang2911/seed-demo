@@ -1,0 +1,20 @@
+.form-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 10px 50px;
+    .form-content{
+        min-width: 350px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 40px 25px 10px 25px;
+        min-height: 25rem;
+        border-radius: 8px;
+        gap: 30px;
+    }
+}

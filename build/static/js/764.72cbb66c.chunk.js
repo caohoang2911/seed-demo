@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_redux=self.webpackChunkreact_redux||[]).push([[764],{7764:function(e,u,n){n.r(u),n.d(u,{default:function(){return t}});n(2791);var r=n(184);function t(){return(0,r.jsx)("div",{children:"CustomizationView"})}}}]);
+//# sourceMappingURL=764.72cbb66c.chunk.js.map

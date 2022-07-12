@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/588.28e903f0.chunk.js","mappings":"iLAEe,SAASA,IACtB,OAAO","sources":["modules/operate-order/pages/AutoOrder/AutoOrder.tsx"],"sourcesContent":["import React from 'react';\n\nexport default function AutoOrder() {\n  return <div>AutoOrder</div>;\n}\n"],"names":["AutoOrder"],"sourceRoot":""}

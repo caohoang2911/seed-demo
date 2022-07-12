@@ -1,0 +1,15 @@
+.hidden-scroll {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.avatar-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 15px;
+  background-color: #fff;
+}
+.user-name {
+  margin-top: 10px;
+}

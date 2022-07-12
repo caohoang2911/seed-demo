@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/756.2c9c5871.chunk.js","mappings":"iLAEe,SAASA,IACtB,OAAO","sources":["modules/operate-order/pages/ListOrder/ListOrder.tsx"],"sourcesContent":["import React from 'react';\n\nexport default function listOrder() {\n  return <div>listOrder</div>;\n}\n"],"names":["listOrder"],"sourceRoot":""}

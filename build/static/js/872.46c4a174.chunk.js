@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_redux=self.webpackChunkreact_redux||[]).push([[872],{9872:function(e,r,u){u.r(r),u.d(r,{default:function(){return c}});u(2791);var n=u(184),c=function(){return(0,n.jsx)("div",{children:"OrderPacked"})}}}]);
+//# sourceMappingURL=872.46c4a174.chunk.js.map

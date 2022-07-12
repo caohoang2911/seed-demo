@@ -1,0 +1,12 @@
+:root {
+  --header-height: 64px;
+  --primary-color: #3180f6;
+  --primary-color-1: #e6f7ff;
+  --primary-text-color: #4a5568;
+  --bg-white: #ffffff;
+  --bg-main: rgba(8, 19, 88, 0.9);
+}
+
+.text-primary {
+  color: var(--primary-text-color) !important;
+}

@@ -1,0 +1,17 @@
+.logo {
+  float: left;
+  width: 120px;
+  height: 31px;
+  margin: 16px 24px 16px 0;
+  background: rgb(91 70 70 / 30%);
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+}
+.user-des {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/72.84609ff2.chunk.js","mappings":"8KAEe,SAASA,IACtB,OAAO","sources":["modules/operate-order/pages/HandOrder/HandOrder.tsx"],"sourcesContent":["import React from 'react';\n\nexport default function HandOrder() {\n  return <div>HandOrder</div>;\n}\n"],"names":["HandOrder"],"sourceRoot":""}

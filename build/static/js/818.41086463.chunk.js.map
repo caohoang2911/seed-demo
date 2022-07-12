@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/818.41086463.chunk.js","mappings":"gLAEe,SAASA,IACtB,OAAO","sources":["modules/operate-order/pages/OrderByPatch/OrderByPatch.tsx"],"sourcesContent":["import React from 'react';\n\nexport default function OrderByPatch() {\n  return <div>OrderByPatch</div>;\n}\n"],"names":["OrderByPatch"],"sourceRoot":""}
