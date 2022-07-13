@@ -1,0 +1,96 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sce-oms-fe-portal-oms
+  namespace: sce-oms-dev
+spec:
+  selector:
+    matchLabels:
+      app: sce-oms-fe-portal-oms
+  template:
+    metadata:
+      labels:
+        app: sce-oms-fe-portal-oms
+    spec:
+      containers:
+        - name: sce-oms-fe-portal-oms
+          image: 10.9.55.8:5000/sce/{{imageName}}
+          env:
+            - name: TZ
+              value: Asia/Bangkok
+            - name: SERVER_PORT
+              value: "3001"
+            - name: SPRING_APPLICATION_NAME
+              value: sce-oms-fe-portal-oms
+            - name: SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_LOGIN_CLIENT_AUTH_HOST_INTERNAL
+              value: http://portal-auth-service:9000/uaa
+            - name: SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_LOGIN_CLIENT_AUTH_HOST
+              value: http://oms-oauth.scehub.xyz/uaa
+            - name: SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_LOGIN_CLIENT_CLIENT_ID
+              value: oms-portal
+            - name: SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_LOGIN_CLIENT_CLIENT_SECRET
+              value: secret
+            - name: SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_LOGIN_CLIENT_REDIRECT_URI
+              value: http://oms-module.scehub.xyz/oauth/call_back
+            - name: SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_UAA_AUTHORIZATION_URI
+              value: http://oms-oauth.scehub.xyz/uaa/oauth/authorize
+            - name: SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_UAA_TOKEN_URI
+              value: http://oms-oauth.scehub.xyz/uaa/oauth/token
+            - name: SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_UAA_USER_INFO_URI
+              value: http://oms-oauth.scehub.xyz/uaa/userinfo
+            - name: APPLICATIONS_TEMPLATE_PATH
+              value: file:/webapp/
+            - name: APPLICATIONS_RESOURCE_HANDLERS
+              value: /**
+            - name: APPLICATIONS_RESOURCE_LOCATIONS
+              value: file:/webapp/
+            - name: SCE_SECURITY_WHITEPATHS
+              value: /static/**,/demo/**,/manifest.json,/logo192.png,/logo512.png,/asset-manifest.json
+            - name: SCE_SECURITY_ACCESSTOKENPATHS
+              value: /asset-manifest.json
+          ports:
+            - name: http-3001
+              containerPort: 3001
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+#            limits:
+#              cpu: 2
+#              memory: 2Gi
+      imagePullSecrets:
+        - name: registry-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sce-oms-fe-portal-oms
+  namespace: sce-oms-dev
+spec:
+  ports:
+    - name: http-3001
+      port: 3001
+      targetPort: http-3001
+  selector:
+    app: sce-oms-fe-portal-oms
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: sce-oms-fe-oms-ingress
+  namespace: sce-oms-dev
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      add_header  Access-Control-Allow-Origin  * always;
+      add_header  Access-Control-Allow-Methods * always;
+      add_header  Access-Control-Allow-Headers * always;
+
+spec:
+  rules:
+    - host: oms-module.scehub.xyz
+      http:
+        paths:
+          - backend:
+              serviceName: sce-oms-fe-portal-oms
+              servicePort: 3001
